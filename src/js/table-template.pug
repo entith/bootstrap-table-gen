@@ -1,0 +1,10 @@
+table.table
+  thead
+    tr
+      each header in headers
+        th= header
+  tbody
+    each row in body
+      tr
+        each cell in row
+          td= cell

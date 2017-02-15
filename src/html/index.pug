@@ -1,0 +1,22 @@
+html
+  head
+    title Test
+  body
+    .container-fluid
+      .row
+        .col-sm-12
+          h1 Bootstrap Table Generator
+      .row
+        .col-md-6
+          h3 Paste Data
+          p Copy your table from Excel and paste it here.
+          textarea#input.form-control(rows="10")
+        .col-md-6
+          h3 Table Source
+          p Copy HTML table source from here.
+          textarea#src.form-control(rows="10")
+      .row
+        .col-sm-12
+          hr
+          h3 Table Preview
+          #table
