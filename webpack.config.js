@@ -1,6 +1,7 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 var clientBundleOutputDir = './dist';
 
 module.exports = {
@@ -16,6 +17,20 @@ module.exports = {
       // { test: /\.css(\?|$)/, use: extractCSS.extract(['css-loader']) },
       { test: /\.css(\?|$)/, use: ['style-loader', 'css-loader'] },
       { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' },
+      {
+              test: /\.(sass|scss)$/,
+              use: [
+                'style-loader',
+                'css-loader?importLoaders=1',
+                {
+                  loader: 'postcss-loader',
+                  options: { plugins: function(){ return [
+                    autoprefixer({ browsers: "> 1%, last 2 version, ie >= 8" })
+                  ] } }
+                },
+                'sass-loader'
+              ]
+            }
     ]
   },
   plugins: [

@@ -1,0 +1,17 @@
+$footer-height: 40px
+
+#footer
+  background-color: #eee
+  text-align: center
+  border-top: 1px solid #ccc
+
+html, body
+  height: 100%
+.page-wrap
+  min-height: 100%
+  margin-bottom: 0 - $footer-height - 1
+.page-wrap:after
+  content: ""
+  display: block
+#footer, .page-wrap:after
+  height: $footer-height

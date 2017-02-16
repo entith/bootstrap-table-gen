@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-// import jQuery from 'jquery';
+import '../css/styles.sass';
 import $ = require("jquery");
 
 declare var require: {
